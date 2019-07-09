@@ -1,0 +1,14 @@
+const nuxtConfig = require('./nuxt.config.development.js')
+
+nuxtConfig.axios = {
+  proxyHeaders: false,
+  proxy: true
+}
+
+nuxtConfig.proxy = {
+  '/api': process.env.BASE_URL,
+  '/oauth2': process.env.BASE_URL,
+  '/laboratory': process.env.BASE_URL
+}
+
+module.exports = nuxtConfig
